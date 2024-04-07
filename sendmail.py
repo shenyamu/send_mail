@@ -1,4 +1,4 @@
-#!/f/python/python
+#!/usr/bin/python
 #-*- coding: UTF-8 -*-
 
 import email
@@ -15,12 +15,12 @@ def usage():
     logger.info(
     """
     Usage:sendmail [option]
-    -i:邮件文件名，多个时用","分割
+    -i:eml文件名，多个时用","分割
     -v:显示发送过程详细信息
     -t:指定收件人，多个时用","分割
     -d:指定收件域或ip
     -f:指定发件人
-    -p:指定发件人密码
+    -p:指定发件人密码（如果需要验证发信才指定）
     -e:指定ehlo的内容
     -c:指定文件编码格式
     -h:帮助信息
@@ -38,7 +38,7 @@ if len(sys.argv) == 1:
     sys.exit()
 
 domain=""
-rcpt = [] #list，可指定多个收件人
+rcpt = [] #list可指定多个收件人
 sender = ""
 debug=0
 passwd=""
